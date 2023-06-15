@@ -19,6 +19,6 @@ public abstract class Skill
         current_PType = pType;
         current_MType = mType;
     }
-    public abstract void OnActive(List<Character> target, int damage = 0);
+    public abstract void OnActive(List<Character> target, int pDamage = 0, int mDamage = 0);
 
 }

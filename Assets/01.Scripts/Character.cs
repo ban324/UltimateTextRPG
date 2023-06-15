@@ -76,7 +76,7 @@ public abstract class Character
         get { return _atk; }
         set { _atk = value; }
     }
-    public int Int
+    public int Mag
     {
         get { return _mag; }
         set { _mag = value; }
@@ -146,6 +146,6 @@ public abstract class Character
         }
         HP -= damage;
     }
-
+    public List<Character> target;
     public Skill selectedSkill;
 }

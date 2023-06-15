@@ -10,7 +10,7 @@ public class TurnManager : MonoBehaviour
     {
         foreach(Character character in characters)
         {
-            
+            character.selectedSkill.OnActive(character.target, character.Atk, character.Mag);
         }
     }
 }
