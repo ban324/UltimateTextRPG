@@ -52,6 +52,9 @@ public abstract class Character
     public int HP;
     public int MP;
 
+    // 변수 추가함
+    public bool onDefend;
+
     private int _atk;
     private int _mag;
     private int _def;
@@ -110,6 +113,8 @@ public abstract class Character
     public void  TakeDamage(PHYSIC_TYPE pType, MAGIC_TYPE mType,SKLL_TYPE sType, int damage)
     {
         damage *= 1 - (Def / (1 + Def));
+        if (onDefend)
+            damage /= 2;
         switch (sType)
         {
             case SKLL_TYPE.PHYSIC:
@@ -145,6 +150,7 @@ public abstract class Character
                 break;
         }
         HP -= damage;
+        onDefend = false;
     }
     public List<Character> target;
     public Skill selectedSkill;
